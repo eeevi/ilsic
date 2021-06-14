@@ -4,6 +4,7 @@
     @ Contribute or report an issue: github.com/eeevi/ilsic
 */
 
+#include <stdio.h>
 #include <string.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -50,6 +51,35 @@ int8_t
 p_compare(struct basic_string* str, char* s_str)
 {
     return strcmp(str->content, s_str);
+}
+
+
+void
+p_slice(struct basic_string* str, _size left, _size right)
+{
+    if (!str->size || \
+        str->size < right || \
+        str->size < left || \
+        right <= left)
+    {
+        perror("p_slice failed, invalid indexes.");
+        return;
+    }
+
+    _size len    = right - left + 1;
+    _size temp_i = 0;
+    char  temp[len];
+
+    for (int i = left; i < right; i++)
+        temp[temp_i++] = str->content[i];
+
+    temp[temp_i] = '\0';
+
+    free(str->content);
+    str->size    = len;
+    str->content = (char *)malloc(sizeof(char) * len);
+
+    strcpy(str->content, temp);
 }
 
 

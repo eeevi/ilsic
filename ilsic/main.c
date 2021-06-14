@@ -66,6 +66,17 @@ main(void)
     p_applicate(&p_string, (void *)&something);
     _NEWLINE;
 
+    /* Can also slise p_strings like this. */
+    p_strcpy(&p_string, "First part. Second part.");
+    _CONTENT(p_string);
+
+    p_slice(&p_string, 0, 11);
+    _CONTENT(p_string);        /* First part. */
+
+    /* And again. */
+    p_slice(&p_string, 6, 12);
+    _CONTENT(p_string);       /* part. */
+
     /* Remove content and set size to zero. */
     p_remove(&p_string);
     _SIZE(p_string);
