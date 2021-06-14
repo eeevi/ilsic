@@ -1,5 +1,5 @@
 # ilsic
-**I** **l**ike **s**trings **i**n **C**. Some personal library for working with strings in C. I don't think it is actually useful. But there is still usage instruction, hehe. ![Usage examples](https://github.com/eeevi/ilsic/blob/main/ilsic/main.c).
+**I** **l**ike **s**trings **i**n **C**. Some personal library for working with strings. I don't think it is actually useful. But there is still usage instruction, hehe. ![Usage examples](https://github.com/eeevi/ilsic/blob/main/ilsic/main.c).
 
 ## How to use?
 I'm glad you're asking! Here we have a struct `basic_string` and it has two fields:
@@ -26,6 +26,9 @@ void p_concat(struct basic_string*, char*);
 
 /* Compare two strings. Same as strcmp. */
 int8_t p_compare(struct basic_string*, char*);
+
+/* Slice p_string content from left (included) to right (excluded). */
+void p_slice(struct basic_string*, _size, _size);
 
 /* Apply some function to every char. */
 void p_applicate(struct basic_string*, void* (*)(char));
