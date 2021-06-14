@@ -24,7 +24,7 @@ main(void)
     p_set_size(&p_string, 10);
 
     /* From now we can set content manually, but this is not cool
-       and also it will not increase our size filed ;( */
+       and also it will not increase our size field ;( */
 
     /* So let's copy some c_string to p_string content and set some size.
        For this we have the p_strcpy function. */
@@ -66,7 +66,7 @@ main(void)
     p_applicate(&p_string, (void *)&something);
     _NEWLINE;
 
-    /* Can also slise p_strings like this. */
+    /* Can also slice p_strings like this. */
     p_strcpy(&p_string, "First part. Second part.");
     _CONTENT(p_string);
 
