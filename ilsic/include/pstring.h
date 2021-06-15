@@ -14,7 +14,7 @@ struct basic_string
 
 /* Apply some function to every char. */
 void
-p_applicate(struct basic_string*, void* (*)(char));
+p_map(struct basic_string*, void* (*)(char));
 
 /* Init empty string with 'count' size. */
 void

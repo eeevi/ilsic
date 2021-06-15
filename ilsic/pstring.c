@@ -1,6 +1,6 @@
 /*
     @ Personal strings lib.
-    @ In fact, I don't think it is really usefull.
+    @ In fact, I don't think it is really useful.
     @ Contribute or report an issue: github.com/eeevi/ilsic
 */
 
@@ -13,7 +13,7 @@
 
 
 void
-p_applicate(struct basic_string* str, void* (*iter_f)(char))
+p_map(struct basic_string* str, void* (*iter_f)(char))
 {
     for (int i = 0; i < str->size; i++)
         (*iter_f)(str->content[i]);

@@ -31,7 +31,7 @@ int8_t p_compare(struct basic_string*, char*);
 void p_slice(struct basic_string*, _size, _size);
 
 /* Apply some function to every char. */
-void p_applicate(struct basic_string*, void* (*)(char));
+void p_map(struct basic_string*, void* (*)(char));
 
 /* Free content and set size to zero. */
 void p_remove(struct basic_string*);

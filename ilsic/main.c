@@ -45,8 +45,7 @@ main(void)
     /* Compare two string. Will return same as strcmp. (-1; 0; 1). */
     // int8_t result = p_compare(&p_string, "Some string.");
 
-    /* switch (result)
-    {
+    /* switch (result) {
         case -1:
             printf("LOWER\n");
             break;
@@ -63,7 +62,7 @@ main(void)
     /* We also can apply some function to every char of p_string.
        Only need pass a pointer to the function, which gets some char as an argument.
        Also cast function pointer to void to avoid warns. */
-    p_applicate(&p_string, (void *)&something);
+    p_map(&p_string, (void *)&something);
     _NEWLINE;
 
     /* Can also slice p_strings like this. */
@@ -84,11 +83,11 @@ main(void)
     return 0;
 }
 
+
 void
 something(char c)
 {
-    switch (c)
-    {
+    switch (c) {
         case 'o': case 'a': case 'u':
             printf("nii");
             break;
